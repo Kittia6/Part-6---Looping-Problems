@@ -11,6 +11,7 @@ namespace Part_6___Looping_Problems
         static void Main(string[] args)
         {
             Prompter();
+            PercentPassing();
             OddSum();
             RandomNumbers();
 
@@ -31,12 +32,20 @@ namespace Part_6___Looping_Problems
 
             void PercentPassing()
             {
-                int score;
-               
+                int score,total,loopNum;
+                total = 0;
+                Console.WriteLine("How many scores would you like to input: ");
+                Int32.TryParse(Console.ReadLine(), out loopNum);
+                for (int i = 1; i <= loopNum; i++)
+                {
                     Console.WriteLine("Please enter a score: ");
                     Int32.TryParse(Console.ReadLine(), out score);
-                
-               
+                    if (score >= 70)
+                    {
+                        total = total + 1;
+                    }
+                }
+                Console.WriteLine($"Your total number of scores above 70% is: {total}");
 
             }
 
