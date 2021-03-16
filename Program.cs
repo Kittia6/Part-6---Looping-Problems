@@ -82,7 +82,7 @@ namespace Part_6___Looping_Problems
             void RandomNumbers()
             {
                 Random generator = new Random();
-                int randMin, randMax, randNum;
+                int randMin, randMax;
                 Console.WriteLine("Please enter a minimum:");
                 if(!Int32.TryParse(Console.ReadLine(), out randMin))
                 {
