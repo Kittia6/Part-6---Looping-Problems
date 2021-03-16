@@ -96,7 +96,7 @@ namespace Part_6___Looping_Problems
 
                 for(int i = 1; i <= 25; i++)
                 {
-                    Console.WriteLine(generator.Next(randMin,randMax));
+                    Console.WriteLine(generator.Next(randMin,randMax+1));
                 }
             }
 
