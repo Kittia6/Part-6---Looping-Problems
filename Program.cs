@@ -19,23 +19,36 @@ namespace Part_6___Looping_Problems
             {
                 int min, max, number;
                 Console.WriteLine("Please enter a minimum:");
-                Int32.TryParse(Console.ReadLine(), out min);
+                if (!Int32.TryParse(Console.ReadLine(), out min))
+                {
+                    Console.WriteLine("That's not a number");
+                }
                 Console.WriteLine("Please enter a maximum:");
-                Int32.TryParse(Console.ReadLine(), out max);
+                if (!Int32.TryParse(Console.ReadLine(), out max))
+                {
+                    Console.WriteLine("That's not a number");
+                }
                 do
                 {
                     Console.WriteLine($"Please enter a number between {min} and {max}: ");
-                    Int32.TryParse(Console.ReadLine(), out number);
+                    if (!Int32.TryParse(Console.ReadLine(), out number))
+                    {
+                        Console.WriteLine("That's not a number");
+                    }
                 } while (number < min || number > max);
                 Console.WriteLine("Thank You");
             }
 
             void PercentPassing()
             {
-                int score,total,loopNum;
+                int score,loopNum;
+                double total,percent;
                 total = 0;
                 Console.WriteLine("How many scores would you like to input: ");
-                Int32.TryParse(Console.ReadLine(), out loopNum);
+                if (!Int32.TryParse(Console.ReadLine(), out loopNum))
+                {
+                    Console.WriteLine("That's not a number");
+                }
                 for (int i = 1; i <= loopNum; i++)
                 {
                     Console.WriteLine("Please enter a score: ");
@@ -45,15 +58,18 @@ namespace Part_6___Looping_Problems
                         total = total + 1;
                     }
                 }
-                Console.WriteLine($"Your total number of scores above 70% is: {total}");
-
+                percent = total / loopNum * 100;
+                Console.WriteLine($"Your percent of passing scores is {percent}%");
             }
 
             void OddSum()
             {
                 int num,sum;
                 Console.WriteLine("Please enter a number: ");
-                Int32.TryParse(Console.ReadLine(), out num);
+                if(!Int32.TryParse(Console.ReadLine(), out num))
+                {
+                    Console.WriteLine("That's not a number");
+                }
                 sum = 0;
                 for (int i = 1; i <= num; i = i + 2)
                 {
@@ -68,9 +84,15 @@ namespace Part_6___Looping_Problems
                 Random generator = new Random();
                 int randMin, randMax, randNum;
                 Console.WriteLine("Please enter a minimum:");
-                Int32.TryParse(Console.ReadLine(), out randMin);
+                if(!Int32.TryParse(Console.ReadLine(), out randMin))
+                {
+                    Console.WriteLine("That's not a number");
+                }
                 Console.WriteLine("Please enter a maximum:");
-                Int32.TryParse(Console.ReadLine(), out randMax);
+                if(!Int32.TryParse(Console.ReadLine(), out randMax))
+                {
+                    Console.WriteLine("That's not a number");
+                }
 
                 for(int i = 1; i <= 25; i++)
                 {
